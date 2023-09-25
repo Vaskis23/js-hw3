@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Approval</title>
+</head>
+<body>
+    <script>
+        let studentGeneralMark = parseFloat(prompt("Student's General Mark (0-10):"));
+        let studentBudget = parseFloat(prompt("Student's budget (0-1000000):"));
+        let studentConnection = parseInt(prompt("Student's connection (0 or 1):"));
+        let hasRecommendationLetter = confirm("Does the student have a recommendation letter?");
+        let extracurricularActivities = parseInt(prompt("Number of extracurricular activities completed:"));
+        let hasHighSchoolDiploma = confirm("Does the student have a high school diploma?");
+
+        const UniversityGrade = 7;
+        const UniversityBudget = 40000;
+        const UniversityConnection = 1;
+        const MinExtracurricularActivities = 3;
+
+        let approve = (studentGeneralMark >= UniversityGrade || 
+                      studentBudget >= UniversityBudget || 
+                      studentConnection === UniversityConnection || 
+                      hasRecommendationLetter || 
+                      (extracurricularActivities >= MinExtracurricularActivities) || 
+                      hasHighSchoolDiploma);
+
+        alert("Will the student be approved: " + approve);
+    </script>
+</body>
+</html>
